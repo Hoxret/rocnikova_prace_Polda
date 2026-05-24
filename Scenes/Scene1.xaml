@@ -1,0 +1,48 @@
+<UserControl x:Class="Vytah.Scenes.Scene1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Image x:Name="BgImage" Source="pack://application:,,,/Assets/Backgrounds/scena1_vytah.png" Stretch="UniformToFill"/>
+
+        <!-- BUTTON NA STAROU PANÍ - vlevo dole, spustí dialog -->
+        <Button x:Name="BtnOldLady"
+                Width="212"
+                Height="534"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="350,0,0,44"
+                Click="BtnOldLady_Click"
+                Background="Gray"
+                BorderThickness="0"
+                Cursor="Hand"
+                ToolTip="Promluvit se starou paní"/>
+
+        <!-- BUTTON NA MUŽE V OBLEKU - vlevo dole vedle staré paní, ale kliknutelný až po BtnOldLady -->
+        <Button x:Name="BtnMan"
+                Width="278"
+                Height="706"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="1063,0,0,10"
+                Click="BtnMan_Click"
+                Background="black"
+                BorderThickness="0"
+                Cursor="Hand"
+                IsEnabled="False"
+                ToolTip="Promluvit s mužem v obleku"/>
+
+        <!-- BUTTON NA OVLÁDACÍ PANEL VÝTAHU - vpravo, dostane hráče do scény 2, kliknutelný až po BtnMan -->
+        <Button x:Name="BtnLiftPanel"
+                Width="150"
+                Height="716"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="1387,82,0,0"
+                Click="BtnLiftPanel_Click"
+                Background="White"
+                BorderThickness="0"
+                Cursor="Hand"
+                IsEnabled="False"
+                ToolTip="Ovládat výtah"/>
+    </Grid>
+</UserControl>

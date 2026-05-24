@@ -1,0 +1,56 @@
+<UserControl x:Class="Vytah.Scenes.MenuScene"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Image x:Name="BgImage" Source="pack://application:,,,/Assets/Backgrounds/titulbeztlacitek_vytah.png"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <!-- horní prázdná část -->
+                <RowDefinition Height="1*"/>
+                <!-- řádek pro Nová hra -->
+                <RowDefinition Height="1*"/>
+                <!-- řádek pro Ukončit -->
+                <RowDefinition Height="2*"/>
+                <!-- spodní mezera -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <!-- levá mezera -->
+                <ColumnDefinition Width="3*"/>
+                <!-- sloupec s tlačítky -->
+                <ColumnDefinition Width="7*"/>
+                <!-- pravá prázdná část -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Nová hra -->
+            <Border Grid.Row="1" Grid.Column="1"
+                Background="Black"
+                Cursor="Hand"
+                Margin="0,5,0,5"
+                MouseLeftButtonDown="BtnNovaHra_Click">
+                <TextBlock Text="NOVÁ HRA"
+                    Foreground="White"
+                    FontSize="50"
+                    FontFamily="Arial Narrow"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+            </Border>
+
+            <!-- Ukončit -->
+            <Border Grid.Row="2" Grid.Column="1"
+                Background="Black"
+                Cursor="Hand"
+                Margin="0,5,0,5"
+                MouseLeftButtonDown="BtnUkoncit_Click">
+                    <TextBlock Text="UKONČIT"
+                        Foreground="White"
+                        FontFamily="Arial Narrow"
+                        FontSize="50"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>
