@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="Vytah.Scenes.Scene5"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Canvas Width="1672" Height="941">
+        <Image x:Name="BgImage"
+               Source="pack://application:,,,/Assets/Backgrounds/scena5_vytah.png"
+               Width="1672" Height="941"
+               Stretch="UniformToFill"
+               Canvas.Left="0" Canvas.Top="0"/>
+
+        <!-- STARÁ PANÍ - vlevo -->
+        <Border x:Name="HitPani"
+                Width="220" Height="564"
+                Canvas.Left="405" Canvas.Top="290"
+                Background="Transparent" Cursor="Hand"
+                ToolTip="Promluvit se starou paní"
+                MouseLeftButtonDown="HitPani_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- MUŽ V OBLEKU - vpravo -->
+        <Border x:Name="HitMuz"
+                Width="220" Height="608"
+                Canvas.Left="1005" Canvas.Top="246"
+                Background="Transparent" Cursor="Hand"
+                ToolTip="Promluvit s mužem"
+                MouseLeftButtonDown="HitMuz_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- VÝTAH - uprostřed -->
+        <Border x:Name="HitVytah"
+                Width="293" Height="359"
+                Canvas.Left="673" Canvas.Top="174"
+                Background="Transparent" Cursor="Hand"
+                ToolTip="Přistoupit k výtahu"
+                MouseLeftButtonDown="HitVytah_Click"/>
+
+        <!-- FINÁLNÍ VOLBA - přes celý Canvas dole -->
+        <Border x:Name="ChoicePanel"
+                Width="1672" Height="200"
+                Canvas.Left="0" Canvas.Top="620"
+                Visibility="Collapsed"
+                Background="Transparent">
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Co uděláš?"
+                           Foreground="#777777" FontFamily="Courier New"
+                           FontSize="12" HorizontalAlignment="Center"
+                           Margin="0,0,0,14"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                    <Border Background="#1A0808" BorderBrush="#3A1818"
+                            BorderThickness="1" CornerRadius="3"
+                            Margin="0,0,16,0" Cursor="Hand" Padding="20,14"
+                            MouseLeftButtonDown="BtnPustit_Click">
+                        <StackPanel>
+                            <TextBlock Text="[ pustit je dál ]"
+                                       Foreground="#BB4444"
+                                       FontFamily="Courier New" FontSize="14"
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="ustoupíš a necháš je vejít do světla"
+                                       Foreground="#552222" FontFamily="Courier New"
+                                       FontSize="10" HorizontalAlignment="Center"
+                                       Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#08081A" BorderBrush="#18183A"
+                            BorderThickness="1" CornerRadius="3"
+                            Cursor="Hand" Padding="20,14"
+                            MouseLeftButtonDown="BtnZavrit_Click">
+                        <StackPanel>
+                            <TextBlock Text="[ zavřít dveře ]"
+                                       Foreground="#4477BB"
+                                       FontFamily="Courier New" FontSize="14"
+                                       HorizontalAlignment="Center"/>
+                            <TextBlock Text="stiskneš tlačítko, výtah sjede dolů"
+                                       Foreground="#223355" FontFamily="Courier New"
+                                       FontSize="10" HorizontalAlignment="Center"
+                                       Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Canvas>
+</UserControl>

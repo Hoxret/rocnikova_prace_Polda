@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="Vytah.Scenes.Scene3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Canvas Width="1672" Height="941">
+        <Image x:Name="BgImage"
+               Source="pack://application:,,,/Assets/Backgrounds/scena3_vytah.png"
+               Width="1672" Height="941"
+               Stretch="UniformToFill"
+               Canvas.Left="0" Canvas.Top="0"/>
+
+        <!-- OBRAZ - vlevo -->
+        <Border x:Name="HitObraz1"
+                Width="260" Height="455"
+                Canvas.Left="60" Canvas.Top="125"
+                Background="Transparent" Cursor="Hand"
+                ToolTip="Prozkoumat obraz"
+                MouseLeftButtonDown="HitObraz1_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- TELEVIZE - vpravo -->
+        <Border x:Name="HitTV"
+                Width="340" Height="275"
+                Canvas.Left="1290" Canvas.Top="235"
+                Background="Transparent" Cursor="Hand"
+                ToolTip="Televize"
+                MouseLeftButtonDown="HitTV_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+        <!-- KOMODA pod televizí -->
+        <Border x:Name="HitKomoda"
+                Width="537" Height="319"
+                Canvas.Left="1135" Canvas.Top="622"
+                Background="Transparent" Cursor="Hand"
+                ToolTip="Prozkoumat komodu"
+                MouseLeftButtonDown="HitKomoda_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        <!-- MUŽ V OBLEKU - klikatelný -->
+        <Border x:Name="HitMuz"
+        Width="312" Height="121"
+        Canvas.Left="660" Canvas.Top="698"
+        Background="Transparent"
+        BorderBrush="Red" BorderThickness="5"
+        Cursor="Hand"
+        ToolTip="Promluvit s mužem"
+        MouseLeftButtonDown="HitMuz_Click" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Text="muž za tebou"
+               Foreground="Black"
+               FontFamily="Courier New"
+               FontSize="30"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Top" Margin="0,37,0,0"/>
+        </Border>
+
+        <!-- DVEŘE VÝTAHU - skryté -->
+        <Border x:Name="HitDvere"
+                Width="200" Height="500"
+                Canvas.Left="736" Canvas.Top="220"
+                Background="Transparent" Cursor="Hand"
+                Visibility="Collapsed"
+                ToolTip="Dveře výtahu"
+                MouseLeftButtonDown="HitDvere_Click">
+            <Border BorderBrush="#44FFFF00" BorderThickness="1" CornerRadius="2"/>
+        </Border>
+
+        <!-- KEYPAD OVERLAY - přes celý Canvas -->
+        <Border x:Name="KeypadOverlay"
+                Width="1672" Height="941"
+                Canvas.Left="0" Canvas.Top="0"
+                Visibility="Collapsed"
+                Background="#DD000000">
+            <Border Background="#0A0A0A" BorderBrush="#2A2A2A"
+                    BorderThickness="1" CornerRadius="6"
+                    Padding="36" Width="300"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Text="PŘÍSTUPOVÝ KÓD" Foreground="#444444"
+                               FontFamily="Courier New" FontSize="11"
+                               HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                    <TextBox x:Name="CodeInput"
+                             FontFamily="Courier New" FontSize="26"
+                             TextAlignment="Center" MaxLength="4"
+                             HorizontalAlignment="Stretch" Padding="8"/>
+                    <Button Content="[ potvrdit ]" Margin="0,14,0,0"
+                            Click="ConfirmCode_Click"
+                            Padding="14,8" FontFamily="Courier New"/>
+                    <Button Content="zrušit" Margin="0,8,0,0"
+                            Click="CancelCode_Click"
+                            Background="Transparent" Foreground="#444444"
+                            BorderThickness="0" FontFamily="Courier New"/>
+                </StackPanel>
+            </Border>
+        </Border>
+    </Canvas>
+</UserControl>
+    
